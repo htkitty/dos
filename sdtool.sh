@@ -4,7 +4,7 @@
 url="$1"
 tor=0
 opt=""
-wrknum=25
+wrknum="$2"
 
 #torconf
 if [[ $tor == 1 ]]; then
