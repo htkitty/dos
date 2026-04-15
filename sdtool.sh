@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #config flags
-url="http://localhost:8080"
+url="$1"
 tor=0
 opt=""
 wrknum=25
@@ -20,7 +20,7 @@ if ! command -v wget > /dev/null; then
 	for ((cwn=1; cwn<=wrknum; cwn++)); do
 	while true; do
 		$opt curl -I "$url" > /dev/null
-		printf "!SENT curl  > $url\n"
+		printf "!SENT curl >>\n"
 	done &
 	done
 fi
@@ -28,7 +28,7 @@ if command -v wget > /dev/null; then
 	for ((cwr=1; cwr<=wrknum; cwr++)); do
 	while true; do
 		$opt wget "$url" > /dev/null
-		printf "!SENT wget > $url\n"
+		printf "!SENT wget >>\n"
 	done &
 	done
 fi
